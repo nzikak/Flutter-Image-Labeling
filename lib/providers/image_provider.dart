@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 import 'package:image_labelling/models/ui_state.dart';
 import 'package:image_picker/image_picker.dart';
+import 'dart:developer' as dev;
 
 class ImageProvider extends ChangeNotifier {
   UiState _uiState = UiState.initial();
 
   UiState get uiState => _uiState;
 
-  late final ImageLabeler _imageLabeler;
+  late ImageLabeler _imageLabeler;
 
   @override
   void dispose() {
@@ -30,7 +31,8 @@ class ImageProvider extends ChangeNotifier {
         _uiState = UiState.initial();
       }
       notifyListeners();
-    } catch (_) {
+    } catch (e) {
+      dev.log(e.toString());
       _uiState = UiState.error();
       notifyListeners();
     }
