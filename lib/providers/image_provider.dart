@@ -8,5 +8,5 @@ class ImageProvider extends ChangeNotifier {
   UiState get uiState => _uiState;
 
 
-  late final ImageLabeler _imageLabeler;
+  late ImageLabeler _imageLabeler;
 }
