@@ -6,4 +6,7 @@ class ImageProvider extends ChangeNotifier {
   UiState _uiState = UiState.initial();
 
   UiState get uiState => _uiState;
+
+
+  late final ImageLabeler _imageLabeler;
 }
