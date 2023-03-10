@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_labelling/object_label.dart';
+import 'package:image_labelling/models/object_label.dart';
 part 'ui_state.freezed.dart';
 
 @freezed

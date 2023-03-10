@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide ImageProvider;
-import 'package:image_labelling/home.dart';
-import 'package:image_labelling/image_provider.dart';
+import 'package:image_labelling/ui/home.dart';
+import 'package:image_labelling/providers/image_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {

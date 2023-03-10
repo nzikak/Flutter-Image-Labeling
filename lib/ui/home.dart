@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart' hide ImageProvider;
-import 'package:image_labelling/image_provider.dart';
-import 'package:image_labelling/object_label.dart';
+import 'package:image_labelling/providers/image_provider.dart';
+import 'package:image_labelling/models/object_label.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
