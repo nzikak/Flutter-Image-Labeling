@@ -34,7 +34,6 @@ class HomeScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<ImageProvider>().startImageClassification();
         },
         child: const Icon(Icons.image),
       ),
