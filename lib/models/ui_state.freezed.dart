@@ -20,7 +20,7 @@ mixin _$UiState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(File image, List<ObjectLabel> labels) success,
+    required TResult Function(File image, List<ImageLabel> labels) success,
     required TResult Function() initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$UiState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(File image, List<ObjectLabel> labels)? success,
+    TResult? Function(File image, List<ImageLabel> labels)? success,
     TResult? Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$UiState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(File image, List<ObjectLabel> labels)? success,
+    TResult Function(File image, List<ImageLabel> labels)? success,
     TResult Function()? initial,
     required TResult orElse(),
   }) =>
@@ -124,7 +124,7 @@ class _$_loading implements _loading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(File image, List<ObjectLabel> labels) success,
+    required TResult Function(File image, List<ImageLabel> labels) success,
     required TResult Function() initial,
   }) {
     return loading();
@@ -135,7 +135,7 @@ class _$_loading implements _loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(File image, List<ObjectLabel> labels)? success,
+    TResult? Function(File image, List<ImageLabel> labels)? success,
     TResult? Function()? initial,
   }) {
     return loading?.call();
@@ -146,7 +146,7 @@ class _$_loading implements _loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(File image, List<ObjectLabel> labels)? success,
+    TResult Function(File image, List<ImageLabel> labels)? success,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -235,7 +235,7 @@ class _$_error implements _error {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(File image, List<ObjectLabel> labels) success,
+    required TResult Function(File image, List<ImageLabel> labels) success,
     required TResult Function() initial,
   }) {
     return error();
@@ -246,7 +246,7 @@ class _$_error implements _error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(File image, List<ObjectLabel> labels)? success,
+    TResult? Function(File image, List<ImageLabel> labels)? success,
     TResult? Function()? initial,
   }) {
     return error?.call();
@@ -257,7 +257,7 @@ class _$_error implements _error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(File image, List<ObjectLabel> labels)? success,
+    TResult Function(File image, List<ImageLabel> labels)? success,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -315,7 +315,7 @@ abstract class _$$_successCopyWith<$Res> {
           _$_success value, $Res Function(_$_success) then) =
       __$$_successCopyWithImpl<$Res>;
   @useResult
-  $Res call({File image, List<ObjectLabel> labels});
+  $Res call({File image, List<ImageLabel> labels});
 }
 
 /// @nodoc
@@ -339,7 +339,7 @@ class __$$_successCopyWithImpl<$Res>
       labels: null == labels
           ? _value._labels
           : labels // ignore: cast_nullable_to_non_nullable
-              as List<ObjectLabel>,
+              as List<ImageLabel>,
     ));
   }
 }
@@ -347,14 +347,14 @@ class __$$_successCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_success implements _success {
-  _$_success({required this.image, required final List<ObjectLabel> labels})
+  _$_success({required this.image, required final List<ImageLabel> labels})
       : _labels = labels;
 
   @override
   final File image;
-  final List<ObjectLabel> _labels;
+  final List<ImageLabel> _labels;
   @override
-  List<ObjectLabel> get labels {
+  List<ImageLabel> get labels {
     if (_labels is EqualUnmodifiableListView) return _labels;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_labels);
@@ -389,7 +389,7 @@ class _$_success implements _success {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(File image, List<ObjectLabel> labels) success,
+    required TResult Function(File image, List<ImageLabel> labels) success,
     required TResult Function() initial,
   }) {
     return success(image, labels);
@@ -400,7 +400,7 @@ class _$_success implements _success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(File image, List<ObjectLabel> labels)? success,
+    TResult? Function(File image, List<ImageLabel> labels)? success,
     TResult? Function()? initial,
   }) {
     return success?.call(image, labels);
@@ -411,7 +411,7 @@ class _$_success implements _success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(File image, List<ObjectLabel> labels)? success,
+    TResult Function(File image, List<ImageLabel> labels)? success,
     TResult Function()? initial,
     required TResult orElse(),
   }) {
@@ -462,10 +462,10 @@ class _$_success implements _success {
 abstract class _success implements UiState {
   factory _success(
       {required final File image,
-      required final List<ObjectLabel> labels}) = _$_success;
+      required final List<ImageLabel> labels}) = _$_success;
 
   File get image;
-  List<ObjectLabel> get labels;
+  List<ImageLabel> get labels;
   @JsonKey(ignore: true)
   _$$_successCopyWith<_$_success> get copyWith =>
       throw _privateConstructorUsedError;
@@ -510,7 +510,7 @@ class _$_initial implements _initial {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(File image, List<ObjectLabel> labels) success,
+    required TResult Function(File image, List<ImageLabel> labels) success,
     required TResult Function() initial,
   }) {
     return initial();
@@ -521,7 +521,7 @@ class _$_initial implements _initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? error,
-    TResult? Function(File image, List<ObjectLabel> labels)? success,
+    TResult? Function(File image, List<ImageLabel> labels)? success,
     TResult? Function()? initial,
   }) {
     return initial?.call();
@@ -532,7 +532,7 @@ class _$_initial implements _initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(File image, List<ObjectLabel> labels)? success,
+    TResult Function(File image, List<ImageLabel> labels)? success,
     TResult Function()? initial,
     required TResult orElse(),
   }) {

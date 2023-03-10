@@ -1,15 +1,21 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
-import 'package:image_labelling/models/object_label.dart';
 import 'package:image_labelling/models/ui_state.dart';
 import 'package:image_picker/image_picker.dart';
-import 'dart:developer' as dev;
 
 class ImageProvider extends ChangeNotifier {
   UiState _uiState = UiState.initial();
 
   UiState get uiState => _uiState;
+
+  late final ImageLabeler _imageLabeler;
+
+  @override
+  void dispose() {
+    _imageLabeler.close();
+    super.dispose();
+  }
 
   void startImageClassification() async {
     try {
@@ -30,20 +36,12 @@ class ImageProvider extends ChangeNotifier {
     }
   }
 
-  Future<List<ObjectLabel>> _classifyImage(File image) async {
+  Future<List<ImageLabel>> _classifyImage(File image) async {
     final inputImage = InputImage.fromFile(image);
-    final imageLabeler =
+     _imageLabeler =
         ImageLabeler(options: ImageLabelerOptions(confidenceThreshold: 0.70));
-    final labels = await imageLabeler.processImage(inputImage);
-    final objectLabels = labels
-        .map(
-          (label) => ObjectLabel(
-            confidence: label.confidence.toStringAsFixed(2),
-            label: label.label,
-          ),
-        )
-        .toList();
-    return objectLabels;
+    final labels = await _imageLabeler.processImage(inputImage);
+    return labels;
   }
 
   Future<XFile?> _selectImage() async {

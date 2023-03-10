@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:image_labelling/models/object_label.dart';
+import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
 part 'ui_state.freezed.dart';
 
 @freezed
@@ -11,7 +11,7 @@ class UiState with _$UiState {
 
   factory UiState.success({
     required File image,
-    required List<ObjectLabel> labels,
+    required List<ImageLabel> labels,
   }) = _success;
 
   factory UiState.initial() = _initial;
